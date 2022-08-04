@@ -1,0 +1,89 @@
+<div class="nav-container">
+  <div class="app-css-container">
+    <div class="nav-scroller">
+      <nav class="nav d-flex" #nav>
+        <a
+          class="p-3 px-5"
+          routerLink=""
+          routerLinkActive="active"
+          [routerLinkActiveOptions]="{ exact: true }"
+          >top games</a
+        >
+        <a
+          class="p-3"
+          routerLink="new"
+          routerLinkActive="active"
+          [routerLinkActiveOptions]="{ exact: true }"
+          >new games</a
+        >
+        <a
+          class="p-3"
+          routerLink="slots"
+          routerLinkActive="active"
+          [routerLinkActiveOptions]="{ exact: true }"
+          >slots</a
+        >
+        <a
+          class="p-3"
+          routerLink="jackpots"
+          routerLinkActive="active"
+          [routerLinkActiveOptions]="{ exact: true }"
+          >jackpots</a
+        >
+        <a
+          class="p-3"
+          routerLink="live"
+          routerLinkActive="active"
+          [routerLinkActiveOptions]="{ exact: true }"
+          >live</a
+        >
+        <a
+          class="p-3"
+          routerLink="blackjack"
+          routerLinkActive="active"
+          [routerLinkActiveOptions]="{ exact: true }"
+          >blackjack</a
+        >
+        <a
+          class="p-3"
+          routerLink="roulette"
+          routerLinkActive="active"
+          [routerLinkActiveOptions]="{ exact: true }"
+          >roulette</a
+        >
+        <a
+          class="p-3"
+          routerLink="table"
+          routerLinkActive="active"
+          [routerLinkActiveOptions]="{ exact: true }"
+          >table</a
+        >
+        <a
+          class="p-3"
+          routerLink="poker"
+          routerLinkActive="active"
+          [routerLinkActiveOptions]="{ exact: true }"
+          >poker</a
+        >
+        <a
+          class="p-3"
+          routerLink="other"
+          routerLinkActive="active"
+          [routerLinkActiveOptions]="{ exact: true }"
+          >other</a
+        >
+      </nav>
+    </div>
+  </div>
+  <div class="progressbar">
+    <mat-progress-bar
+      mode="indeterminate"
+      style="height: 5px"
+      color="accent"
+      *ngIf="isLoading$ | async"
+    ></mat-progress-bar>
+  </div>
+</div>
+<div class="content">
+  <router-outlet></router-outlet>
+</div>

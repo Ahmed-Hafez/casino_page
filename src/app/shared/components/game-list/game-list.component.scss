@@ -1,0 +1,29 @@
+.games-container {
+  margin: 0 30px;
+}
+
+.wrapper {
+  $max-game-width: 270px;
+  $container-size: 5;
+  display: flex;
+  flex-wrap: wrap;
+  max-width: calc($max-game-width * $container-size);
+  justify-content: flex-start;
+  margin: 0 auto;
+
+  @media (min-width: 1155px) and (max-width: 1410px) {
+    $container-size: 4;
+    max-width: calc($max-game-width * $container-size);
+  }
+  @media (min-width: 875px) and (max-width: 1155px) {
+    $container-size: 3;
+    max-width: calc($max-game-width * $container-size);
+  }
+  @media (min-width: 600px) and (max-width: 875px) {
+    $container-size: 2;
+    max-width: calc($max-game-width * $container-size);
+  }
+  @media (max-width: 600px) {
+    justify-content: center;
+  }
+}

@@ -1,0 +1,15 @@
+<div class="main" *ngIf="game">
+  <p *ngIf="isTop" class="ribbon top">top</p>
+  <p *ngIf="isNew" class="ribbon new">new</p>
+  <p *ngIf="game.amount" class="jackpot-amount">
+    {{ game.amount | currency: "EUR" }}
+  </p>
+  <p class="game-name">{{ game.name }}</p>
+  <img
+    [src]="game.image"
+    [alt]="game.name"
+    appImageLoader
+    srcOnError="assets/images/game-placeholder.jpg"
+  />
+  <button class="play-btn">Play</button>
+</div>

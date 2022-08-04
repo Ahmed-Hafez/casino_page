@@ -1,0 +1,42 @@
+@import "../../../../assets/css/colors";
+
+.nav-container {
+  background: $app-black;
+  position: fixed;
+  top: 0;
+  width: 100vw;
+  z-index: 10;
+}
+.app-css-container {
+  max-width: 1140;
+}
+.nav-scroller {
+  overflow-y: hidden;
+}
+nav {
+  background: $app-black;
+  overflow-x: auto;
+  flex-wrap: nowrap;
+  text-align: center;
+  white-space: nowrap;
+
+  a {
+    text-transform: capitalize;
+    color: $app-white;
+    text-decoration: none;
+    cursor: pointer;
+    flex: 1;
+    text-align: center;
+
+    &.active,
+    &:hover {
+      background: $app-green;
+    }
+  }
+}
+
+.content {
+  padding-top: 80px;
+  background: $app-background;
+  min-height: 100vh;
+}

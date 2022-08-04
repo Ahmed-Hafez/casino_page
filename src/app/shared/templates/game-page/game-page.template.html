@@ -1,0 +1,4 @@
+<ng-container *ngIf="!isLoading">
+  <app-game-list [games]="games" *ngIf="games?.length"></app-game-list>
+  <app-no-games *ngIf="!games?.length"></app-no-games>
+</ng-container>

@@ -1,0 +1,9 @@
+@import "./colors";
+
+.mat-progress-bar.mat-accent .mat-progress-bar-fill::after {
+  background: $app-green;
+}
+
+.mat-progress-bar.mat-accent .mat-progress-bar-buffer {
+  background-color: $app-black;
+}

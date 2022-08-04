@@ -1,0 +1,95 @@
+@import "../../../../assets/css/colors";
+
+.main {
+  overflow: hidden;
+  position: relative;
+  margin: 5px;
+  border-radius: 20px;
+
+  &:hover {
+    img {
+      transform: scale(1.2);
+    }
+
+    @media (hover: hover) {
+      .play-btn {
+        transform: translate(-50%, -50%) scale(1);
+      }
+      .game-name {
+        bottom: 0;
+      }
+    }
+  }
+
+  img {
+    width: 260px;
+    height: 154px;
+    transition: transform 0.3s ease-in;
+  }
+
+  .jackpot-amount {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    color: $app-white;
+    background: transparentize($app-black, 0.2%);
+    text-align: center;
+    padding: 6px;
+    font-weight: bold;
+    z-index: 1;
+  }
+
+  .play-btn {
+    position: absolute;
+    top: 55%;
+    left: 50%;
+    transform: translate(-50%, -50%) scale(0);
+    background: $app-green;
+    color: $app-white;
+    padding: 5px 80px;
+    border-radius: 15px;
+    z-index: 3;
+    outline: none;
+    font-size: 1.25rem;
+    border: none;
+    transition: transform 0.3s ease-in;
+  }
+
+  .game-name {
+    position: absolute;
+    width: 100%;
+    padding: 10px 0;
+    color: $app-white;
+    bottom: -40%;
+    background: transparentize($app-black, 0.2%);
+    margin: 0;
+    text-align: center;
+    z-index: 3;
+    transition: bottom 0.3s ease-in;
+  }
+}
+
+.ribbon {
+  position: absolute;
+  color: $app-white;
+  z-index: 1;
+  width: 100%;
+  text-align: center;
+  background: $app-green;
+  padding: 5px;
+  text-transform: capitalize;
+  z-index: 2;
+
+  &.new {
+    transform: rotate(45deg);
+    left: 100px;
+    top: 15px;
+  }
+
+  &.top {
+    transform: rotate(-45deg);
+    right: 100px;
+    top: 15px;
+  }
+}
