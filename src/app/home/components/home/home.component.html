@@ -4,70 +4,70 @@
       <nav class="nav d-flex" #nav>
         <a
           class="p-3 px-5"
-          routerLink=""
+          [routerLink]="['/games', 'top']"
           routerLinkActive="active"
           [routerLinkActiveOptions]="{ exact: true }"
           >top games</a
         >
         <a
           class="p-3"
-          routerLink="new"
+          [routerLink]="['/games', 'new']"
           routerLinkActive="active"
           [routerLinkActiveOptions]="{ exact: true }"
           >new games</a
         >
         <a
           class="p-3"
-          routerLink="slots"
+          [routerLink]="['/games', 'slots']"
           routerLinkActive="active"
           [routerLinkActiveOptions]="{ exact: true }"
           >slots</a
         >
         <a
           class="p-3"
-          routerLink="jackpots"
+          [routerLink]="['/games', 'jackpots']"
           routerLinkActive="active"
           [routerLinkActiveOptions]="{ exact: true }"
           >jackpots</a
         >
         <a
           class="p-3"
-          routerLink="live"
+          [routerLink]="['/games', 'live']"
           routerLinkActive="active"
           [routerLinkActiveOptions]="{ exact: true }"
           >live</a
         >
         <a
           class="p-3"
-          routerLink="blackjack"
+          [routerLink]="['/games', 'blackjack']"
           routerLinkActive="active"
           [routerLinkActiveOptions]="{ exact: true }"
           >blackjack</a
         >
         <a
           class="p-3"
-          routerLink="roulette"
+          [routerLink]="['/games', 'roulette']"
           routerLinkActive="active"
           [routerLinkActiveOptions]="{ exact: true }"
           >roulette</a
         >
         <a
           class="p-3"
-          routerLink="table"
+          [routerLink]="['/games', 'table']"
           routerLinkActive="active"
           [routerLinkActiveOptions]="{ exact: true }"
           >table</a
         >
         <a
           class="p-3"
-          routerLink="poker"
+          [routerLink]="['/games', 'poker']"
           routerLinkActive="active"
           [routerLinkActiveOptions]="{ exact: true }"
           >poker</a
         >
         <a
           class="p-3"
-          routerLink="other"
+          [routerLink]="['/games', 'other']"
           routerLinkActive="active"
           [routerLinkActiveOptions]="{ exact: true }"
           >other</a
@@ -85,5 +85,5 @@
   </div>
 </div>
 <div class="content">
-  <router-outlet></router-outlet>
+  <app-games-page></app-games-page>
 </div>

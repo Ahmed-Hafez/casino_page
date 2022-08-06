@@ -1,3 +1,4 @@
+import { ActivatedRoute, Params } from '@angular/router';
 import { Component, Input, OnInit } from '@angular/core';
 import { Game } from '../../models/game.model';
 
@@ -12,8 +13,19 @@ export class GameComponent implements OnInit {
   isTop: boolean = false;
   isNew: boolean = false;
 
+  constructor(private activatedRoute: ActivatedRoute) {}
+
   ngOnInit(): void {
-    if (this.game.categories.find((cat) => cat === 'top')) this.isTop = true;
-    if (this.game.categories.find((cat) => cat === 'new')) this.isNew = true;
+    this.activatedRoute.params.subscribe((param: Params) => {
+      if (param['category'] === 'new' || param['category'] === 'top') {
+        this.isTop = false;
+        this.isNew = false;
+      } else {
+        if (this.game.categories.find((cat) => cat === 'top'))
+          this.isTop = true;
+        if (this.game.categories.find((cat) => cat === 'new'))
+          this.isNew = true;
+      }
+    });
   }
 }

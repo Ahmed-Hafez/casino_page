@@ -1,5 +1,8 @@
 <div class="games-container">
   <div class="wrapper">
-    <app-game *ngFor="let game of games" [game]="game"></app-game>
+    <app-game
+      *ngFor="let game of games; trackBy: trackGamesById"
+      [game]="game"
+    ></app-game>
   </div>
 </div>

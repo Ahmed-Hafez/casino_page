@@ -1,4 +1,3 @@
-import { HomeModule } from './home/home.module';
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 
@@ -14,7 +13,6 @@ import { LoadingInterceptor } from './core/interceptors/loading.interceptor';
     BrowserAnimationsModule,
     BrowserModule,
     HttpClientModule,
-    HomeModule,
     AppRoutingModule,
     BrowserAnimationsModule,
   ],

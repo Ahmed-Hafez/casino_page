@@ -16,11 +16,11 @@ import { timer, Observable } from 'rxjs';
   styleUrls: ['./home.component.scss'],
 })
 export class HomeComponent implements AfterViewInit {
+  isLoading$: Observable<boolean>;
+
   @ViewChildren(RouterLinkActive, { read: ElementRef })
   linksElements!: QueryList<ElementRef>;
   @ViewChild('nav') nav!: ElementRef;
-
-  isLoading$: Observable<boolean>;
 
   constructor(loadingService: LoadingService) {
     this.isLoading$ = loadingService.isLoading$;

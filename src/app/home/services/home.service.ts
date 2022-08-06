@@ -2,7 +2,7 @@ import { JackpotsService } from '../../api-services/jackpots.service';
 import { GamesService } from '../../api-services/games.service';
 import { Injectable } from '@angular/core';
 import { Observable, iif, of, mergeMap, map, interval } from 'rxjs';
-import { getRandomIntValue } from 'src/app/shared/helpers';
+import { getRandomIntValue, intersect } from 'src/app/shared/helpers';
 import { Game } from 'src/app/shared/models/game.model';
 
 @Injectable({
@@ -29,6 +29,14 @@ export class HomeService {
         map((res) => {
           let jackpotGames: Game[] = [];
           res.games.forEach((game) => {
+            // Adjust (other) category
+            if (
+              intersect(game.categories, ['ball', 'virtual', 'fun']).length > 0
+            ) {
+              game.categories.push('other');
+            }
+
+            // Adjust (jackpots) category
             const jackpotData = res.jackpots.find(
               (jackpot) => game.id === jackpot.game
             );

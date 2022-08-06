@@ -8,4 +8,8 @@ import { Game } from '../../models/game.model';
 })
 export class GameListComponent {
   @Input() games!: Game[];
+
+  trackGamesById(index: number, game: Game) {
+    return game.id;
+  }
 }
